@@ -1,0 +1,15 @@
+{
+  "title": "Pricing card",
+  "cases": 6,
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "widths": [
+    320,
+    560
+  ],
+  "seconds": 4.8,
+  "flagged": 0,
+  "flags": []
+}

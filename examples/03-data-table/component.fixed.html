@@ -1,0 +1,32 @@
+<!-- Fixed: a real empty state, error text with enough contrast and a retry. -->
+<style>
+  .t { font-family: Inter, system-ui, sans-serif; font-size: 13px; width: 100%; border-collapse: collapse; color: #111; table-layout: auto; }
+  [data-theme="dark"] .t { color: #F2F2F0; }
+  .t th { text-align: left; font-weight: 550; color: #5E5D59; padding: 8px 10px; border-bottom: 1px solid #E5E4E0; font-size: 12px; }
+  [data-theme="dark"] .t th { color: #A3A29E; border-color: #2A2A2A; }
+  .t td { padding: 10px; border-bottom: 1px solid #EFEEEA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  [data-theme="dark"] .t td { border-color: #222; }
+  .t td:last-child, .t th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .t td:first-child, .t td:last-child { overflow: visible; text-overflow: clip; }
+  .t td:nth-child(2) { max-width: 0; width: 100%; }
+  .bar { height: 10px; border-radius: 5px; background: #EDECE8; } [data-theme="dark"] .bar { background: #262626; }
+  .msg { font-family: Inter, system-ui, sans-serif; font-size: 13px; padding: 20px 4px; color: #5E5D59; display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+  [data-theme="dark"] .msg { color: #A3A29E; }
+  .msg strong { display: block; color: #111; font-weight: 600; margin-bottom: 2px; }
+  [data-theme="dark"] .msg strong { color: #F2F2F0; }
+  .msg.err strong { color: #B4232A; } [data-theme="dark"] .msg.err strong { color: #FF8A8F; }
+  .msg button { font: 600 12px/1 Inter, system-ui, sans-serif; padding: 8px 12px; border-radius: 8px; border: 0; background: #151515; color: #fff; }
+  [data-theme="dark"] .msg button { background: #F2F2F0; color: #111; }
+  .msg button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+</style>
+<script>
+  window.renderComponent = function (p) {
+    if (p.error) return '<div class="msg err"><div><strong>Couldn\'t load invoices</strong>Check your connection and try again.</div><button>Retry</button></div>';
+    if (p.rows && !p.rows.length) return '<div class="msg"><div><strong>No invoices yet</strong>Invoices you send will show up here.</div><button>New invoice</button></div>';
+    var head = '<thead><tr><th>Invoice</th><th>Client</th><th>Amount</th></tr></thead>';
+    var body = p.loading
+      ? [1, 2, 3].map(function () { return '<tr><td><div class="bar"></div></td><td><div class="bar"></div></td><td><div class="bar"></div></td></tr>'; }).join('')
+      : p.rows.map(function (r) { return '<tr><td>' + r[0] + '</td><td title="' + r[1] + '">' + r[1] + '</td><td>' + r[2] + '</td></tr>'; }).join('');
+    return '<table class="t">' + head + '<tbody>' + body + '</tbody></table>';
+  };
+</script>

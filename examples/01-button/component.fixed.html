@@ -1,0 +1,26 @@
+<!-- Fixed: visible focus ring, loading keeps size and contrast, long labels wrap. -->
+<style>
+  .btn { font: 550 14px/1.25 Inter, system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 40px; min-width: 132px; padding: 10px 16px; max-width: 100%; text-align: center;
+    border: 0; border-radius: 10px; background: #151515; color: #fff; cursor: pointer;
+    transition: background 120ms, transform 120ms; }
+  .btn:hover { background: #2A2A2A; }
+  .btn:active { transform: scale(0.97); }
+  .btn:focus-visible { outline: 2px solid #151515; outline-offset: 2px; }
+  .btn:disabled { background: #D9D8D4; color: #8F8E8A; cursor: not-allowed; }
+  .btn.loading { color: #fff; }
+  .btn.success { background: #1F6F43; }
+  [data-theme="dark"] .btn { background: #F2F2F0; color: #111; }
+  [data-theme="dark"] .btn:hover { background: #DADAD7; }
+  [data-theme="dark"] .btn:focus-visible { outline-color: #F2F2F0; }
+  [data-theme="dark"] .btn.success { background: #2E9E62; color: #06150D; }
+  [data-theme="dark"] .btn:disabled { background: #2A2A2A; color: #8A8A86; }
+  .spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; }
+</style>
+<script>
+  window.renderComponent = function (p) {
+    var cls = 'btn' + (p.loading ? ' loading' : '') + (p.success ? ' success' : '');
+    var inner = p.loading ? '<span class="spin"></span>Saving' : (p.success ? '✓ ' : '') + p.label;
+    return '<button class="' + cls + '"' + (p.disabled ? ' disabled' : '') + (p.loading ? ' aria-busy="true"' : '') + '>' + inner + '</button>';
+  };
+</script>

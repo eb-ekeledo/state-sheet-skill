@@ -1,0 +1,28 @@
+{
+  "skill": "state-sheet",
+  "target": "At least 9 of 10 on each side",
+  "should_trigger": [
+    "show me every state of this component",
+    "where does this card break?",
+    "QA this table before I ship it",
+    "what happens with really long names?",
+    "check this button in RTL and dark mode",
+    "stress test the pricing card",
+    "does the loading state jump?",
+    "review all the states of the input field",
+    "make a state matrix for this component",
+    "is anything broken in dark mode?"
+  ],
+  "should_not_trigger": [
+    "add a loading spinner",
+    "write unit tests for this hook",
+    "design an empty state illustration",
+    "make this layout responsive",
+    "animate the error message",
+    "build a new date picker",
+    "convert this component to TypeScript",
+    "pick colours for dark mode",
+    "set up Storybook",
+    "fix this API error"
+  ]
+}

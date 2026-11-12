@@ -1,0 +1,24 @@
+<!-- Seeded bugs: empty state renders nothing, error text is too faint. -->
+<style>
+  .t { font-family: Inter, system-ui, sans-serif; font-size: 13px; width: 100%; border-collapse: collapse; color: #111; table-layout: fixed; }
+  [data-theme="dark"] .t { color: #F2F2F0; }
+  .t th { text-align: left; font-weight: 550; color: #5E5D59; padding: 8px 10px; border-bottom: 1px solid #E5E4E0; font-size: 12px; }
+  [data-theme="dark"] .t th { color: #A3A29E; border-color: #2A2A2A; }
+  .t td { padding: 10px; border-bottom: 1px solid #EFEEEA; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  [data-theme="dark"] .t td { border-color: #222; }
+  .t td:last-child, .t th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  .t th:first-child { width: 30%; } .t th:last-child { width: 32%; }
+  .bar { height: 10px; border-radius: 5px; background: #EDECE8; } [data-theme="dark"] .bar { background: #262626; }
+  .err { font-family: Inter, system-ui, sans-serif; font-size: 13px; color: #F59E9E; padding: 12px 0; }
+</style>
+<script>
+  window.renderComponent = function (p) {
+    if (p.error) return '<div class="err">' + p.error + '</div>';
+    if (p.rows && !p.rows.length) return '';
+    var head = '<thead><tr><th>Invoice</th><th>Client</th><th>Amount</th></tr></thead>';
+    var body = p.loading
+      ? [1, 2, 3].map(function () { return '<tr><td><div class="bar"></div></td><td><div class="bar"></div></td><td><div class="bar"></div></td></tr>'; }).join('')
+      : p.rows.map(function (r) { return '<tr><td>' + r[0] + '</td><td>' + r[1] + '</td><td>' + r[2] + '</td></tr>'; }).join('');
+    return '<table class="t">' + head + '<tbody>' + body + '</tbody></table>';
+  };
+</script>

@@ -1,0 +1,11 @@
+{
+  "title": "Pricing card",
+  "cases": [
+    { "id": "default", "label": "Default", "props": { "plan": "Studio", "price": "$24", "features": ["Unlimited projects", "Version history", "Priority support"] } },
+    { "id": "focus", "label": "Keyboard focus", "props": { "plan": "Studio", "price": "$24", "features": ["Unlimited projects"] }, "interact": "focus" },
+    { "id": "empty", "label": "No features", "props": { "plan": "Starter", "price": "$0", "features": [] } },
+    { "id": "long", "label": "Long text", "props": { "plan": "Studio for agencies and growing in-house design teams", "price": "$24", "features": ["Unlimited projects across every workspace you manage, with shared libraries"] } },
+    { "id": "huge", "label": "Huge numbers", "props": { "plan": "Enterprise", "price": "$99,999,999", "features": ["Everything in Studio"] } },
+    { "id": "rtl", "label": "RTL", "props": { "plan": "استوديو", "price": "$24", "features": ["مشاريع غير محدودة"] }, "dir": "rtl" }
+  ]
+}

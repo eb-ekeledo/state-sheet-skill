@@ -1,0 +1,6 @@
+{ "seeded": [
+  { "case": "focus", "kind": "focus" },
+  { "case": "loading", "kind": "contrast" },
+  { "case": "loading", "kind": "shift" },
+  { "case": "long", "kind": "overflow" }
+] }

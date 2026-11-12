@@ -1,0 +1,11 @@
+{
+  "title": "Invoices table",
+  "cases": [
+    { "id": "default", "label": "Default", "props": { "rows": [["INV-1042", "Northwind", "$1,240.00"], ["INV-1041", "Acme Studio", "$880.00"], ["INV-1040", "Globex", "$3,015.50"]] } },
+    { "id": "loading", "label": "Loading", "props": { "loading": true } },
+    { "id": "empty", "label": "Empty", "props": { "rows": [] } },
+    { "id": "error", "label": "Error", "props": { "error": "Couldn't load invoices. Check your connection and try again." } },
+    { "id": "long", "label": "Long text", "props": { "rows": [["INV-1042", "Northwind Traders International Holdings and Partners", "$1,240.00"]] } },
+    { "id": "huge", "label": "Huge numbers", "props": { "rows": [["INV-9999999", "Globex", "$12,345,678,901.99"]] } }
+  ]
+}

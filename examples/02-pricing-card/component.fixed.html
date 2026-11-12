@@ -1,0 +1,25 @@
+<!-- Fixed: muted text uses a token per theme, prices wrap, empty plans say what's included. -->
+<style>
+  .card { --muted: #5E5D59; font-family: Inter, system-ui, sans-serif; background: #fff; border-radius: 16px; padding: 20px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06); color: #111; max-width: 300px; }
+  [data-theme="dark"] .card { --muted: #A3A29E; background: #1C1C1C; box-shadow: 0 0 0 1px rgba(255,255,255,.06); color: #F2F2F0; }
+  .plan { margin: 0 0 4px; font-size: 13px; font-weight: 550; color: var(--muted); overflow-wrap: anywhere; }
+  .price { margin: 0 0 14px; font-size: clamp(22px, 9cqi, 32px); font-weight: 700; letter-spacing: -.02em; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+  .card { container-type: inline-size; }
+  .price small { font-size: 13px; font-weight: 450; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
+  ul { list-style: none; margin: 0 0 16px; padding: 0; font-size: 13px; line-height: 1.6; }
+  li::before { content: '✓  '; }
+  .none { margin: 0 0 16px; font-size: 13px; color: var(--muted); }
+  button { font: 600 13px/1 Inter, system-ui, sans-serif; width: 100%; height: 38px; border: 0; border-radius: 10px; background: #151515; color: #fff; }
+  button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  [data-theme="dark"] button { background: #F2F2F0; color: #111; }
+</style>
+<script>
+  window.renderComponent = function (p) {
+    var list = p.features.length
+      ? '<ul>' + p.features.map(function (f) { return '<li>' + f + '</li>'; }).join('') + '</ul>'
+      : '<p class="none">The basics, free forever.</p>';
+    return '<div class="card"><p class="plan">' + p.plan + '</p><p class="price">' + p.price + ' <small>/ month</small></p>' +
+      list + '<button>Choose ' + p.plan.split(' ')[0] + '</button></div>';
+  };
+</script>

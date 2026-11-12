@@ -1,0 +1,86 @@
+{
+  "title": "Invoices table",
+  "cases": 6,
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "widths": [
+    320,
+    560
+  ],
+  "seconds": 4,
+  "flagged": 8,
+  "flags": [
+    {
+      "case": "empty",
+      "theme": "light",
+      "width": 320,
+      "kind": "missing",
+      "msg": "Renders nothing"
+    },
+    {
+      "case": "empty",
+      "theme": "light",
+      "width": 560,
+      "kind": "missing",
+      "msg": "Renders nothing"
+    },
+    {
+      "case": "empty",
+      "theme": "dark",
+      "width": 320,
+      "kind": "missing",
+      "msg": "Renders nothing"
+    },
+    {
+      "case": "empty",
+      "theme": "dark",
+      "width": 560,
+      "kind": "missing",
+      "msg": "Renders nothing"
+    },
+    {
+      "case": "error",
+      "theme": "light",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.05:1 under 4.5:1 on \"Couldn't load invoices. Check yo\""
+    },
+    {
+      "case": "error",
+      "theme": "light",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.05:1 under 4.5:1 on \"Couldn't load invoices. Check yo\""
+    },
+    {
+      "case": "huge",
+      "theme": "light",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Number cut off: \"INV-9999999\""
+    },
+    {
+      "case": "huge",
+      "theme": "light",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Number cut off: \"$12,345,678,901.99\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Number cut off: \"INV-9999999\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Number cut off: \"$12,345,678,901.99\""
+    }
+  ]
+}

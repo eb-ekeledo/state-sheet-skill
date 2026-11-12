@@ -1,0 +1,14 @@
+{
+  "title": "Save button",
+  "cases": [
+    { "id": "default", "label": "Default", "props": { "label": "Save changes" } },
+    { "id": "hover", "label": "Hover", "props": { "label": "Save changes" }, "interact": "hover" },
+    { "id": "focus", "label": "Keyboard focus", "props": { "label": "Save changes" }, "interact": "focus" },
+    { "id": "pressed", "label": "Pressed", "props": { "label": "Save changes" }, "interact": "press" },
+    { "id": "disabled", "label": "Disabled", "props": { "label": "Save changes", "disabled": true } },
+    { "id": "loading", "label": "Loading", "props": { "label": "Save changes", "loading": true }, "sameSizeAs": "default" },
+    { "id": "success", "label": "Success", "props": { "label": "Saved", "success": true } },
+    { "id": "long", "label": "Long text", "props": { "label": "Save changes and notify everyone on the project" } },
+    { "id": "rtl", "label": "RTL", "props": { "label": "حفظ التغييرات" }, "dir": "rtl" }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "title": "Save button",
+  "cases": 9,
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "widths": [
+    320,
+    560
+  ],
+  "seconds": 7.8,
+  "flagged": 12,
+  "flags": [
+    {
+      "case": "focus",
+      "theme": "light",
+      "width": 320,
+      "kind": "focus",
+      "msg": "No visible focus ring"
+    },
+    {
+      "case": "focus",
+      "theme": "light",
+      "width": 560,
+      "kind": "focus",
+      "msg": "No visible focus ring"
+    },
+    {
+      "case": "focus",
+      "theme": "dark",
+      "width": 320,
+      "kind": "focus",
+      "msg": "No visible focus ring"
+    },
+    {
+      "case": "focus",
+      "theme": "dark",
+      "width": 560,
+      "kind": "focus",
+      "msg": "No visible focus ring"
+    },
+    {
+      "case": "loading",
+      "theme": "light",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 1.82:1 under 4.5:1 on \"Saving\""
+    },
+    {
+      "case": "loading",
+      "theme": "light",
+      "width": 320,
+      "kind": "shift",
+      "msg": "Size changes vs default: 126x40 to 89x40"
+    },
+    {
+      "case": "loading",
+      "theme": "light",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 1.82:1 under 4.5:1 on \"Saving\""
+    },
+    {
+      "case": "loading",
+      "theme": "light",
+      "width": 560,
+      "kind": "shift",
+      "msg": "Size changes vs default: 126x40 to 89x40"
+    },
+    {
+      "case": "loading",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 1.63:1 under 4.5:1 on \"Saving\""
+    },
+    {
+      "case": "loading",
+      "theme": "dark",
+      "width": 320,
+      "kind": "shift",
+      "msg": "Size changes vs default: 126x40 to 89x40"
+    },
+    {
+      "case": "loading",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 1.63:1 under 4.5:1 on \"Saving\""
+    },
+    {
+      "case": "loading",
+      "theme": "dark",
+      "width": 560,
+      "kind": "shift",
+      "msg": "Size changes vs default: 126x40 to 89x40"
+    },
+    {
+      "case": "long",
+      "theme": "light",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Text clipped: \"Save changes and notify everyone\""
+    },
+    {
+      "case": "long",
+      "theme": "light",
+      "width": 560,
+      "kind": "overflow",
+      "msg": "Text clipped: \"Save changes and notify everyone\""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Text clipped: \"Save changes and notify everyone\""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 560,
+      "kind": "overflow",
+      "msg": "Text clipped: \"Save changes and notify everyone\""
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{ "seeded": [
+  { "case": "empty", "kind": "missing" },
+  { "case": "error", "kind": "contrast" },
+  { "case": "huge", "kind": "overflow" }
+] }

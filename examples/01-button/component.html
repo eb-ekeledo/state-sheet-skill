@@ -1,0 +1,25 @@
+<!-- Seeded bugs: focus ring removed, loading label low contrast and shrinks, long labels clipped. -->
+<style>
+  .btn { font: 550 14px/1 Inter, system-ui, sans-serif; display: inline-flex; align-items: center; gap: 8px;
+    height: 40px; padding: 0 16px; max-width: 200px; white-space: nowrap; overflow: hidden;
+    border: 0; border-radius: 10px; background: #151515; color: #fff; cursor: pointer;
+    transition: background 120ms, transform 120ms; }
+  .btn:hover { background: #2A2A2A; }
+  .btn:active { transform: scale(0.97); }
+  .btn:focus { outline: none; }
+  .btn:disabled { background: #D9D8D4; color: #8F8E8A; cursor: not-allowed; }
+  .btn.loading { background: #F1F0ED; color: #B5B4B0; padding: 0 10px; }
+  .btn.success { background: #1F6F43; }
+  [data-theme="dark"] .btn { background: #F2F2F0; color: #111; }
+  [data-theme="dark"] .btn:hover { background: #DADAD7; }
+  [data-theme="dark"] .btn.loading { background: #222; color: #444; }
+  [data-theme="dark"] .btn.success { background: #2E9E62; color: #06150D; }
+  .spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; }
+</style>
+<script>
+  window.renderComponent = function (p) {
+    var cls = 'btn' + (p.loading ? ' loading' : '') + (p.success ? ' success' : '');
+    var inner = p.loading ? '<span class="spin"></span>Saving' : (p.success ? '✓ ' : '') + p.label;
+    return '<button class="' + cls + '"' + (p.disabled ? ' disabled' : '') + '>' + inner + '</button>';
+  };
+</script>

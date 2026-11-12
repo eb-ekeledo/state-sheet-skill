@@ -1,0 +1,198 @@
+{
+  "title": "Pricing card",
+  "cases": 6,
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "widths": [
+    320,
+    560
+  ],
+  "seconds": 4.5,
+  "flagged": 13,
+  "flags": [
+    {
+      "case": "default",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Studio\""
+    },
+    {
+      "case": "default",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "default",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Studio\""
+    },
+    {
+      "case": "default",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "focus",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Studio\""
+    },
+    {
+      "case": "focus",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "focus",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Studio\""
+    },
+    {
+      "case": "focus",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "empty",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Starter\""
+    },
+    {
+      "case": "empty",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "empty",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Starter\""
+    },
+    {
+      "case": "empty",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Studio for agencies and growing \""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Studio for agencies and growing \""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "huge",
+      "theme": "light",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Spills out of the component: \"/ month\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Enterprise\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Spills out of the component: \"/ month\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"Enterprise\""
+    },
+    {
+      "case": "huge",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "rtl",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"استوديو\""
+    },
+    {
+      "case": "rtl",
+      "theme": "dark",
+      "width": 320,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "rtl",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"استوديو\""
+    },
+    {
+      "case": "rtl",
+      "theme": "dark",
+      "width": 560,
+      "kind": "contrast",
+      "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    }
+  ]
+}
