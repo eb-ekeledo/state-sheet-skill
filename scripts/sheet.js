@@ -5,7 +5,9 @@
  *   node scripts/sheet.js --html path/to/component.html --cases path/to/cases.json --out out/
  *   node scripts/sheet.js --url "http://localhost:5173/__sheet?case={case}&theme={theme}" --cases cases.json --out out/
  *
- * Options: --widths 320,560   --themes light,dark   --title "Pricing card"   --strict (exit 1 on any flag)
+ * Options: --widths 320,560   --themes light,dark   --title "Pricing card"   --only default,loading
+ *          --strict (exit 1 on any flag)
+ * Per case: "interact": "hover|focus|press", "dir": "rtl", "sameSizeAs": "<case id>", "reducedMotion": true
  *
  * Writes out/sheet.png, out/report.json and out/report.md.
  */
@@ -40,7 +42,9 @@ if ((!htmlPath && !urlTemplate) || !casesPath) {
 }
 
 const spec = JSON.parse(fs.readFileSync(casesPath, 'utf8'));
-const cases = spec.cases;
+const only = arg('only') ? arg('only').split(',') : null;
+const cases = only ? spec.cases.filter((c) => only.includes(c.id)) : spec.cases;
+if (!cases.length) { console.error('No cases to render' + (only ? ' (check --only ids)' : '')); process.exit(2); }
 const title = arg('title', spec.title || path.basename(path.dirname(path.resolve(casesPath))));
 fs.mkdirSync(outDir, { recursive: true });
 
@@ -126,6 +130,12 @@ async function inspect(page) {
       if (el.scrollWidth > el.clientWidth + 1 && cs.textOverflow === 'ellipsis' && /^[^\d]{0,6}[\d][\d,.\s-]*[^\d]{0,6}$/.test(txt)) {
         flags.push({ kind: 'overflow', msg: `Number cut off: "${label}"` });
       }
+      // Clipped vertically: a fixed height hides lines, with no line clamp to say it's on purpose.
+      const clipsY = ['hidden', 'clip'].includes(cs.overflowY) || ['hidden', 'clip'].includes(cs.overflow);
+      const clamped = cs.webkitLineClamp && cs.webkitLineClamp !== 'none';
+      if (el.scrollHeight > el.clientHeight + 2 && clipsY && !clamped) {
+        flags.push({ kind: 'overflow', msg: `Text clipped vertically: "${label}"` });
+      }
       // Spill: text box runs outside the component.
       if (er.right > r.right + 1 || er.left < r.left - 1) {
         const key = 'spill' + label;
@@ -142,6 +152,15 @@ async function inspect(page) {
         const need = large ? 3 : 4.5;
         const cr = ratio(fgSolid, bg);
         if (cr < need) flags.push({ kind: 'contrast', msg: `Contrast ${cr.toFixed(2)}:1 under ${need}:1 on "${label}"` });
+      }
+    }
+    // Target size (WCAG 2.2, 2.5.8): controls need at least 24 x 24 px. Links inside running text are exempt.
+    for (const el of root.querySelectorAll('button, a[href], input:not([type="hidden"]), select, textarea, [role="button"], [role="switch"], [role="checkbox"], [role="tab"]')) {
+      const b = el.getBoundingClientRect();
+      if (b.width === 0 || b.height === 0) continue;
+      if (el.tagName === 'A' && el.closest('p, li') && el.closest('p, li').textContent.trim().length > el.textContent.trim().length + 10) continue;
+      if (b.width < 24 || b.height < 24) {
+        flags.push({ kind: 'target', msg: `Target too small: ${Math.round(b.width)}x${Math.round(b.height)}px (needs 24x24)` });
       }
     }
     return { flags, size };
@@ -190,7 +209,7 @@ async function interact(page, c) {
   for (const c of cases) {
     for (const theme of themes) {
       for (const width of widths) {
-        const context = await browser.newContext({ viewport: { width: width + 48, height: 800 }, deviceScaleFactor: 2, colorScheme: theme });
+        const context = await browser.newContext({ viewport: { width: width + 48, height: 800 }, deviceScaleFactor: 2, colorScheme: theme, reducedMotion: c.reducedMotion ? 'reduce' : 'no-preference' });
         const page = await context.newPage();
         if (componentHtml) {
           await page.setContent(hostPage(componentHtml, c, theme, width), { waitUntil: 'load' });

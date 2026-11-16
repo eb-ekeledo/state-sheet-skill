@@ -1,6 +1,6 @@
 {
   "title": "Save button",
-  "cases": 9,
+  "cases": 10,
   "themes": [
     "light",
     "dark"
@@ -9,8 +9,8 @@
     320,
     560
   ],
-  "seconds": 7.8,
-  "flagged": 12,
+  "seconds": 7.6,
+  "flagged": 16,
   "flags": [
     {
       "case": "focus",
@@ -95,6 +95,34 @@
       "width": 560,
       "kind": "shift",
       "msg": "Size changes vs default: 126x40 to 89x40"
+    },
+    {
+      "case": "icon",
+      "theme": "light",
+      "width": 320,
+      "kind": "target",
+      "msg": "Target too small: 20x20px (needs 24x24)"
+    },
+    {
+      "case": "icon",
+      "theme": "light",
+      "width": 560,
+      "kind": "target",
+      "msg": "Target too small: 20x20px (needs 24x24)"
+    },
+    {
+      "case": "icon",
+      "theme": "dark",
+      "width": 320,
+      "kind": "target",
+      "msg": "Target too small: 20x20px (needs 24x24)"
+    },
+    {
+      "case": "icon",
+      "theme": "dark",
+      "width": 560,
+      "kind": "target",
+      "msg": "Target too small: 20x20px (needs 24x24)"
     },
     {
       "case": "long",

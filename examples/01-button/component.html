@@ -1,4 +1,4 @@
-<!-- Seeded bugs: focus ring removed, loading label low contrast and shrinks, long labels clipped. -->
+<!-- Seeded bugs: focus ring removed, loading label low contrast and shrinks, long labels clipped, icon button too small to tap. -->
 <style>
   .btn { font: 550 14px/1 Inter, system-ui, sans-serif; display: inline-flex; align-items: center; gap: 8px;
     height: 40px; padding: 0 16px; max-width: 200px; white-space: nowrap; overflow: hidden;
@@ -14,10 +14,12 @@
   [data-theme="dark"] .btn:hover { background: #DADAD7; }
   [data-theme="dark"] .btn.loading { background: #222; color: #444; }
   [data-theme="dark"] .btn.success { background: #2E9E62; color: #06150D; }
+  .btn.icon { width: 20px; height: 20px; min-width: 0; min-height: 0; padding: 0; justify-content: center; border-radius: 8px; font-size: 14px; }
   .spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; }
 </style>
 <script>
   window.renderComponent = function (p) {
+    if (p.icon) return '<button class="btn icon" aria-label="' + p.label + '">✕</button>';
     var cls = 'btn' + (p.loading ? ' loading' : '') + (p.success ? ' success' : '');
     var inner = p.loading ? '<span class="spin"></span>Saving' : (p.success ? '✓ ' : '') + p.label;
     return '<button class="' + cls + '"' + (p.disabled ? ' disabled' : '') + '>' + inner + '</button>';

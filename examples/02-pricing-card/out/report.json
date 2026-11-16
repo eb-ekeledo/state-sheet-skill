@@ -9,8 +9,8 @@
     320,
     560
   ],
-  "seconds": 4.5,
-  "flagged": 13,
+  "seconds": 3.7,
+  "flagged": 15,
   "flags": [
     {
       "case": "default",
@@ -98,6 +98,27 @@
     },
     {
       "case": "long",
+      "theme": "light",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Text clipped vertically: \"Studio for agencies and growing \""
+    },
+    {
+      "case": "long",
+      "theme": "light",
+      "width": 560,
+      "kind": "overflow",
+      "msg": "Text clipped vertically: \"Studio for agencies and growing \""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 320,
+      "kind": "overflow",
+      "msg": "Text clipped vertically: \"Studio for agencies and growing \""
+    },
+    {
+      "case": "long",
       "theme": "dark",
       "width": 320,
       "kind": "contrast",
@@ -109,6 +130,13 @@
       "width": 320,
       "kind": "contrast",
       "msg": "Contrast 2.29:1 under 4.5:1 on \"/ month\""
+    },
+    {
+      "case": "long",
+      "theme": "dark",
+      "width": 560,
+      "kind": "overflow",
+      "msg": "Text clipped vertically: \"Studio for agencies and growing \""
     },
     {
       "case": "long",
