@@ -1,6 +1,6 @@
 # State sheet: Save button
 
-9 states, light and dark, 320 and 560 px. 12 cells flagged.
+10 states, light and dark, 320 and 560 px. 16 cells flagged.
 
 | State | Theme | Width | Problem |
 | --- | --- | --- | --- |
@@ -16,6 +16,10 @@
 | loading | dark | 320px | Size changes vs default: 126x40 to 89x40 |
 | loading | dark | 560px | Contrast 1.63:1 under 4.5:1 on "Saving" |
 | loading | dark | 560px | Size changes vs default: 126x40 to 89x40 |
+| icon | light | 320px | Target too small: 20x20px (needs 24x24) |
+| icon | light | 560px | Target too small: 20x20px (needs 24x24) |
+| icon | dark | 320px | Target too small: 20x20px (needs 24x24) |
+| icon | dark | 560px | Target too small: 20x20px (needs 24x24) |
 | long | light | 320px | Text clipped: "Save changes and notify everyone" |
 | long | light | 560px | Text clipped: "Save changes and notify everyone" |
 | long | dark | 320px | Text clipped: "Save changes and notify everyone" |

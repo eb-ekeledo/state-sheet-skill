@@ -15,10 +15,12 @@
   [data-theme="dark"] .btn:focus-visible { outline-color: #F2F2F0; }
   [data-theme="dark"] .btn.success { background: #2E9E62; color: #06150D; }
   [data-theme="dark"] .btn:disabled { background: #2A2A2A; color: #8A8A86; }
+  .btn.icon { width: 32px; height: 32px; min-width: 0; min-height: 0; padding: 0; justify-content: center; border-radius: 8px; font-size: 14px; }
   .spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; }
 </style>
 <script>
   window.renderComponent = function (p) {
+    if (p.icon) return '<button class="btn icon" aria-label="' + p.label + '">✕</button>';
     var cls = 'btn' + (p.loading ? ' loading' : '') + (p.success ? ' success' : '');
     var inner = p.loading ? '<span class="spin"></span>Saving' : (p.success ? '✓ ' : '') + p.label;
     return '<button class="' + cls + '"' + (p.disabled ? ' disabled' : '') + (p.loading ? ' aria-busy="true"' : '') + '>' + inner + '</button>';

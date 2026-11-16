@@ -13,11 +13,12 @@ Designers used to lay out every state side by side and spot the broken one at a 
 
 | Flag | Meaning |
 | --- | --- |
-| Text clipped | Content is cut off with no ellipsis |
+| Text clipped | Content is cut off with no ellipsis, sideways or at the bottom |
 | Number cut off | An amount, ID or count is truncated |
 | Spills out | Text runs past the component's edge |
 | Contrast | Text under WCAG AA |
 | No visible focus ring | Tab reaches the control but nothing changes |
+| Target too small | A button is under 24 x 24 px, too small to tap (WCAG 2.2) |
 | Size changes | A state jumps in size, like a button that shrinks while loading |
 | Renders nothing | A missing state |
 
@@ -50,13 +51,13 @@ Or run it yourself on a plain HTML component:
 node scripts/sheet.js --html examples/01-button/component.html --cases examples/01-button/cases.json --out out
 ```
 
-For React, Vue or Svelte, Claude adds a dev-only route (for example `/__sheet?case=loading&theme=dark`) and the script screenshots it:
+For React, Vue, Next.js or Svelte, Claude adds a dev-only route (recipes in [`references/frameworks.md`](references/frameworks.md)) (for example `/__sheet?case=loading&theme=dark`) and the script screenshots it:
 
 ```bash
 node scripts/sheet.js --url "http://localhost:5173/__sheet?case={case}&theme={theme}" --cases cases.json --out out
 ```
 
-Options: `--widths 320,560`, `--themes light,dark`, `--strict` to fail CI on any flag.
+Options: `--widths 320,560`, `--themes light,dark`, `--only loading,error` to re-render just the cases you're fixing, `--strict` to fail CI on any flag. Add `"reducedMotion": true` to a case to see it with reduced motion on.
 
 ## Examples
 
@@ -64,8 +65,8 @@ Each example has a component with planted bugs, a fixed version, and both sheets
 
 | Example | Planted bugs | Sheet |
 | --- | --- | --- |
-| [Save button](examples/01-button) | No focus ring, loading label too faint, loading button shrinks, long labels clipped | [before](examples/01-button/out/sheet.png) · [after](examples/01-button/out-fixed/sheet.png) |
-| [Pricing card](examples/02-pricing-card) | Grey text vanishes in dark mode, huge prices spill out | [before](examples/02-pricing-card/out/sheet.png) · [after](examples/02-pricing-card/out-fixed/sheet.png) |
+| [Save button](examples/01-button) | No focus ring, loading label too faint, loading button shrinks, long labels clipped, icon button too small to tap | [before](examples/01-button/out/sheet.png) · [after](examples/01-button/out-fixed/sheet.png) |
+| [Pricing card](examples/02-pricing-card) | Grey text vanishes in dark mode, huge prices spill out, long plan names cut off at the bottom | [before](examples/02-pricing-card/out/sheet.png) · [after](examples/02-pricing-card/out-fixed/sheet.png) |
 | [Invoices table](examples/03-data-table) | Empty state renders nothing, error text too faint, amounts cut off | [before](examples/03-data-table/out/sheet.png) · [after](examples/03-data-table/out-fixed/sheet.png) |
 
 ## Quality
